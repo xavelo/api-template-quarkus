@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-template-quarkus-deployment
+  annotations:
+    commitID: "f01260e2c42d575246425ea20f8f55a0c76f433c"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api-template-quarkus
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: api-template-quarkus
+    spec:
+      containers:
+        - name: api-template
+          image: 'xavelo/api-template-quarkus:f01260e2c42d575246425ea20f8f55a0c76f433c'
+          ports:
+            - containerPort: 80
