@@ -1,9 +1,4 @@
 FROM openjdk:17
 WORKDIR /app
-
-RUN ls -l build/libs
-
-RUN ls -l build
-
-COPY build/libs/template-1.0.0-SNAPSHOT.jar /app/myapp.jar
+COPY build/libs/*.jar /app/myapp.jar
 EXPOSE 8080
