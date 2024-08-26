@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: api-template-quarkus-deployment
   annotations:
-    commitID: "43f883c9789b0eecaa8247771bad0aa383383f48"
+    commitID: "8f494a39258590272215575b6259e27807b4cf4f"
 spec:
   replicas: 2
   selector:
@@ -21,6 +21,6 @@ spec:
     spec:
       containers:
         - name: api-template
-          image: 'xavelo/api-template-quarkus:43f883c9789b0eecaa8247771bad0aa383383f48'
+          image: 'xavelo/api-template-quarkus:8f494a39258590272215575b6259e27807b4cf4f'
           ports:
             - containerPort: 80
